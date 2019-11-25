@@ -1,0 +1,22 @@
+[package]
+name = "tide-cdk-play"
+version = "0.1.0"
+authors = ["Shane Witbeck <shane@digitalsanctum.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2.33.0"
+tide = "0.3.0"
+accept-encoding = "0.2.0-alpha.2"
+cookie = { version = "0.12.0", features = ["percent-encode"] }
+fnv = "1.0.6"
+futures = "0.3.1"
+http = "0.1.19"
+http-service = "0.3.1"
+log = "0.4.8"
+pin-utils = "0.1.0-alpha.4"
+route-recognizer = "0.1.13"
+serde = { version = "1.0.102", features = ["derive"] }
+serde_json = "1.0.42"
+serde_qs = "0.5.0"
+typemap = "0.3.3"

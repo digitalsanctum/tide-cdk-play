@@ -1,0 +1,11 @@
+bin/*
+cdk.out/
+lib/
+node_modules/
+cdk.context.json
+cdk.json
+jest.config.js
+package.json
+package-lock.json
+README*
+tsconfig.json

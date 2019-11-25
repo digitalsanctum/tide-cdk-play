@@ -1,0 +1,3 @@
+{
+  "app": "npx ts-node bin/tide-cdk-play.ts"
+}
