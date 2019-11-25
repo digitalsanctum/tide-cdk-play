@@ -14,15 +14,16 @@ RUN USER=root cargo new dummy
 WORKDIR /usr/src/dummy
 COPY Cargo.toml Cargo.lock ./
 RUN cargo build --release
-#RUN cargo build --target x86_64-unknown-linux-musl --release
 
 # Copy the source and build the application.
 COPY src ./src
-#RUN cargo install --target x86_64-unknown-linux-musl --path .
 RUN cargo install --path .
 
 # Copy the statically-linked binary into a scratch container.
-FROM scratch
-COPY --from=build /usr/local/cargo/bin/dummy .
+FROM alpine
+COPY --from=build /usr/local/cargo/bin/tide-cdk-play .
+RUN chmod +x ./tide-cdk-play
+RUN chown 1000:wheel tide-cdk-play
+RUN ls -la
 USER 1000
-CMD ["./dummy"]
+ENTRYPOINT ./tide-cdk-play
